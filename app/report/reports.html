@@ -14,7 +14,7 @@
     />
     <link rel="stylesheet" href="/css/styles.css" />
 
-    <title>L'ultima Cena Pizzeria! - Create Ingredient</title>
+    <title>L'ultima Cena Pizzeria! - Reports</title>
   </head>
 
   <body>
@@ -36,7 +36,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/app/order/orders.html">Orders</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="/app/ingredient/ingredients.html">Ingredients</a>
           </li>
           <li class="nav-item">
@@ -45,68 +45,75 @@
           <li class="nav-item">
             <a class="nav-link" href="/app/size/sizes.html">Sizes</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="/app/report/reports.html">Reports</a>
           </li>
         </ul>
       </nav>
     </header>
 
-    <!-- FORM PART -->
+    <!-- TABLE -->
 
     <div class="container">
-      <!-- Notification Area -->
-
-      <div id="ingredient-alert" class="alert alert-success" role="alert">
-        <h4 class="alert-heading">Great!</h4>
-        <p>Your ingredient was updated successfully</p>
-      </div>
-
       <div class="jumbotron">
-        <h2 class="text-center">Update Ingredient!</h2>
+        <div id="order-list">
+          <h2 class="text-center">Reports</h2>
+          <table id="orders" class="table bg-white table-bordered table-hover">
+            <thead class="thead-dark">
+              <tr class="d-flex">
+                <th class="col-4">Top month revenue</th>
+                <th class="col-4">Top ingradient</th>
+                <th class="col-4">Top beverage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="d-flex">
+                <td class="col-4">
+                  <p>Month:  <b id="month_name"></b></p>
+                  <p>Reveneu: $ <b id="revenue"></b></p></p>
+                </td>
+                <td class="col-4">
+                  <p>Ingredient: <b id="ingredient"></b></p></p>
+                  <p>Requestes: <b id="ingredient_value"></b></p></p>
+                </td>
+                <td class="col-4">
+                  <p>Beverage: <b id="beverage"></b></p></p>
+                  <p>requestes: <b id="beverage_value"></b></p></p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-        <form id="ingredient-form">
-          <!-- INGREDIENT DATA -->
-
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">ID: </label>
-            <div class="col-sm-10">
-              <input id="_id" disabled name="_id" type="text" class="form-control" placeholder="ID" />
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Name: </label>
-            <div class="col-sm-10">
-              <input id="name" required name="name" type="text" class="form-control" placeholder="Name" />
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Price: </label>
-            <div class="col-sm-10">
-              <input
-                id="price"
-                required
-                name="price"
-                type="number"
-                step="0.01"
-                min="0"
-                max="10"
-                class="form-control"
-                placeholder="Price"
-              />
-            </div>
-          </div>
-
-          <!-- ingredient BUTTON -->
-
-          <div class="text-center">
-            <button type="submit" class="btn btn-warning btn-lg">Submit</button>
-          </div>
-        </form>
+          <table id="orders" class="table bg-white table-bordered table-hover">
+            <thead class="thead-dark">
+              <tr class="d-flex">
+                <th class="col-12 text-center">Top clients</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="d-flex">
+                <td class="col-4">
+                  <p>Name: <b id="client1_name"></b></p>
+                  <p>Orders: <b id="client1_orders"></b></p></p>
+                </td>
+                <td class="col-4">
+                  <p>Name: <b id="client2_name"></b></p>
+                  <p>Orders: <b id="client2_orders"></b></p></p>
+                </td>
+                <td class="col-4">
+                  <p>Name: <b id="client3_name"></b></p>
+                  <p>Orders: <b id="client3_orders"></b></p></p>
+                </td>
+              </tr>
+            </tbody>
+          </table>          
+        </div>
       </div>
     </div>
+
+   
+      
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -125,13 +132,12 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
-
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.js"
       integrity="sha256-ILqMXUXPam8LdBwbq5W6r1m0NxeP8ydLFqrYN+bMCeI="
       crossorigin="anonymous"
     ></script>
 
-    <script src="/js/ingredient/update-ingredient.js"></script>
+    <script src="/js/report/repors.js"></script>
   </body>
 </html>
